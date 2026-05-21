@@ -24,7 +24,7 @@ window.SQ_SAMPLES = (function () {
       color: "#a855f7",
       title: "Media coverage",
       desc: "Video, TV, and press appearances. Surface news the moment it breaks on broadcast.",
-      sample: { title: "M&M", desc: "CNBC TV18 · 'Best Performing Nifty Stock 2002-2024'" }
+      sample: { title: "M&M", desc: "'Best Performing Nifty Stock 2002-2024'" }
     },
     {
       name: "SPVMA",
@@ -138,7 +138,7 @@ window.SQ_SAMPLES = (function () {
           ],
           classificationJson: { smartTag: "Quarterly Earnings", importanceFlag: "Insightful", category: "Financial Performance", subcategory: "Earnings Reports", emoji: "📊" },
           concernFlag: { flag: "💡 Insightful Update", flagNote: "Strong operating performance with margin expansion" },
-          deepdiveData: { type: "CONCALL_DECODER", fast_fact: "Macrotech reported record FY24 pre-sales of INR 145.2 billion (20% YoY) with EBITDA margin of ~30%." }
+          deepdiveData: { type: "IMPACT_ANALYSIS", fast_fact: "Macrotech reported record FY24 pre-sales of INR 145.2 billion (20% YoY) with EBITDA margin of ~30%." }
         }
       },
       {
@@ -216,21 +216,6 @@ window.SQ_SAMPLES = (function () {
         dealExchange: "BSE"
       }
     },
-    CRYSTAL_BALL: {
-      label: "Crystal Ball",
-      desc: "AI-generated forward view: current performance + future outlook + optional audio narration.",
-      stock: "Sample Tech Limited",
-      data: {
-        type: "CRYSTAL_BALL",
-        imageUrl: "",
-        audio_url: "https://scoutquest-autoexpiry-qa.s3.ap-south-1.amazonaws.com/sample.mp3",
-        deep_dive: "📊 Financial Performance Highlights:\n- Q4 FY26 revenue grew 19.1% YoY to ₹9,200M.",
-        isAudioPresent: true,
-        isImagePresent: true,
-        future_outlook_essence: "<ul><li><b>Growth Aspirations:</b> Plans for circa 15% annual revenue growth.</li><li><b>Margin Expansion:</b> Target operating margin uplift of 200bps over the next two FYs.</li><li><b>New Geographies:</b> Active pipeline in EMEA & SEA markets.</li></ul>",
-        current_performance_essence: "<ul><li><b>Revenue Growth:</b> Q4 FY26 revenue at ₹9,200M, up 19.1% YoY.</li><li><b>Profitability:</b> EBITDA margin expanded to 22.4%.</li><li><b>Order Book:</b> Healthy backlog at 1.4× annual revenue.</li></ul>"
-      }
-    },
     MANAGEMENT_TAKE: {
       label: "Management Take",
       desc: "Distilled management commentary from earnings calls and investor decks.",
@@ -243,15 +228,6 @@ window.SQ_SAMPLES = (function () {
         isImagePresent: true,
         future_outlook_essence: "<ul><li><b>Virtual Console Launch:</b> Launch planned within two weeks on Flipkart, priced under ₹5,000 with subscription.</li><li><b>Growth Target:</b> Aims for gaming MRR of USD 3M within 15–18 months.</li></ul>",
         current_performance_essence: "<ul><li><b>EBITDA Growth:</b> FY26 EBITDA surged 110.6% to ₹297M through cost optimizations.</li><li><b>Revenue Trends:</b> FY26 revenue declined 10.2% YoY to ₹5,245M.</li></ul>"
-      }
-    },
-    CONCALL_DECODER: {
-      label: "Con-call Decoder",
-      desc: "Earnings call essence — key call-outs in one fast fact, full transcript intelligence.",
-      stock: "Macrotech Developers Limited",
-      data: {
-        type: "CONCALL_DECODER",
-        fast_fact: "Macrotech reported record FY24 pre-sales of INR 145.2 billion (20% YoY) with EBITDA margin of ~30%."
       }
     },
     RESULTS_QUICK_LOOK: {
@@ -333,21 +309,6 @@ window.SQ_SAMPLES = (function () {
         type: "ANALYST_VIEW",
         image_url: "",
         isImagePresent: true
-      }
-    },
-    VOLUME_SPURT: {
-      label: "Volume Spurt",
-      desc: "Unusual volume vs. trailing 2-week average. Used by SPVMA filter category.",
-      stock: "Kalpataru Projects International Ltd",
-      data: {
-        type: "VOLUME_SPURT",
-        multipleOfAvg: 9.99,
-        sharesTraded: 3400000,
-        valueTraded: "₹413 cr",
-        exchange: "NSE",
-        cmp: 1173.7,
-        changePct: -3.81,
-        observedAt: "02:54PM"
       }
     },
     TWEET: {
@@ -466,7 +427,7 @@ window.SQ_SAMPLES = (function () {
             deep_dive_html: "<h2>🔍 Q4 FY24 highlights</h2><ul><li>Record pre-sales of INR 42.3 billion</li></ul>"
           },
           concernFlag: { flag: "💡 Insightful Update", flagNote: "Strong operating performance with margin expansion" },
-          deepdiveData: { type: "CONCALL_DECODER", fast_fact: "Macrotech reported record FY24 pre-sales of INR 145.2 billion (20% YoY) with EBITDA margin of ~30%." }
+          deepdiveData: { type: "IMPACT_ANALYSIS", fast_fact: "Macrotech reported record FY24 pre-sales of INR 145.2 billion (20% YoY) with EBITDA margin of ~30%." }
         }
       }
     },
@@ -496,7 +457,7 @@ window.SQ_SAMPLES = (function () {
             deep_dive_html: "<h2>🔍 Q4 FY24 highlights (revised)</h2>"
           },
           concernFlag: { flag: "💡 Insightful Update", flagNote: "Strong operating performance with margin expansion" },
-          deepdiveData: { type: "CONCALL_DECODER", fast_fact: "Macrotech reported record FY24 pre-sales of INR 145.2 billion (20% YoY) with EBITDA margin of ~30%." }
+          deepdiveData: { type: "IMPACT_ANALYSIS", fast_fact: "Macrotech reported record FY24 pre-sales of INR 145.2 billion (20% YoY) with EBITDA margin of ~30%." }
         }
       }
     },

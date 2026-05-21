@@ -576,16 +576,13 @@
   const TYPE_RENDERERS = {
     BLOCK_DEAL: renderBlockDeal,
     BULK_DEAL: renderBulkDeal,
-    CRYSTAL_BALL: renderCrystalBall,
     MANAGEMENT_TAKE: renderManagementTake,
-    CONCALL_DECODER: renderFastFact,
     IMPACT_ANALYSIS: renderFastFact,
     RESULTS_QUICK_LOOK: renderResultsQuickLook,
     SAST_NOTEWORTHY_TRANSACTION: renderSast,
     CHART_WIZARD: renderChartWizard,
     BROADCAST_BRIEFING: renderBroadcast,
     ANALYST_VIEW: renderMediaOnly,
-    VOLUME_SPURT: renderVolumeSpurt,
     TWEET: renderMediaOnly,
     CREDIT_RATING: renderCreditRating,
     ANALYST_MEET: renderAnalystMeet,
@@ -637,15 +634,6 @@
           <div class="deal__price">@${d.price}</div>
         </div>
       </div>`;
-  }
-  function renderCrystalBall(d) {
-    return `
-      <div class="dd-grid">
-        <div class="dd-card"><div class="dd-card__label">🔭 Current performance</div><div>${d.current_performance_essence || ''}</div></div>
-        <div class="dd-card"><div class="dd-card__label">🌌 Future outlook</div><div>${d.future_outlook_essence || ''}</div></div>
-      </div>
-      ${d.isAudioPresent ? '<div class="dd-card dd-card--full"><div class="dd-card__label">🔊 Audio narration available</div><div style="color:var(--text-2);font-size:13px;">An AI-generated audio walkthrough is attached at <code>audio_url</code>.</div></div>' : ''}
-      ${d.deep_dive ? '<div class="dd-card dd-card--full"><div class="dd-card__label">📊 Deep dive</div><pre style="white-space:pre-wrap;font-size:12.5px;color:var(--text-2);margin:0;">' + escapeHtml(d.deep_dive) + '</pre></div>' : ''}`;
   }
   function renderManagementTake(d) {
     return `
@@ -745,28 +733,6 @@
     return `<div class="dd-card dd-card--full"><div class="dd-card__label">${label}</div>
       <div style="color:var(--text-2);font-size:13.5px;">This update is image-first. The rendered visual is available at <code>image_url</code>. ${d.isImagePresent ? 'Image is present.' : 'Image not present.'}</div></div>`;
   }
-  function renderVolumeSpurt(d) {
-    const change = d.changePct || 0;
-    const cls = change >= 0 ? 'qrl-metric__delta--up' : 'qrl-metric__delta--down';
-    return `
-      <div class="qrl-grid">
-        <div class="qrl-metric">
-          <div class="qrl-metric__period">Volume multiple</div>
-          <div class="qrl-metric__val">${d.multipleOfAvg}×</div>
-          <div class="qrl-metric__delta" style="color:var(--text-3);">vs 2-week avg</div>
-        </div>
-        <div class="qrl-metric">
-          <div class="qrl-metric__period">Shares · ${escapeHtml(d.exchange||'')}</div>
-          <div class="qrl-metric__val">${fmtQty(d.sharesTraded)}</div>
-          <div class="qrl-metric__delta" style="color:var(--text-3);">value ${escapeHtml(d.valueTraded||'')}</div>
-        </div>
-        <div class="qrl-metric">
-          <div class="qrl-metric__period">CMP @ ${escapeHtml(d.observedAt||'')}</div>
-          <div class="qrl-metric__val">₹${d.cmp}</div>
-          <div class="qrl-metric__delta ${cls}">${change>=0?'▲':'▼'} ${Math.abs(change)}%</div>
-        </div>
-      </div>`;
-  }
   function renderCreditRating(d) {
     return `<div class="dd-card dd-card--full">
       <div class="dd-card__label">💳 Credit rating action</div>
@@ -818,7 +784,7 @@
     const chips = $('#typeChips');
     const stage = $('#typeStage');
     const samples = window.SQ_SAMPLES.deepdiveSamples;
-    const order = ['BLOCK_DEAL','BULK_DEAL','SAST_NOTEWORTHY_TRANSACTION','RESULTS_QUICK_LOOK','CONCALL_DECODER','CRYSTAL_BALL','MANAGEMENT_TAKE','IMPACT_ANALYSIS','CHART_WIZARD','BROADCAST_BRIEFING','VOLUME_SPURT','ANALYST_MEET','ACQUISITION','ORDER_RECEIVED','CREDIT_RATING','ANALYST_VIEW','TWEET','GENERIC'];
+    const order = ['BLOCK_DEAL','BULK_DEAL','SAST_NOTEWORTHY_TRANSACTION','RESULTS_QUICK_LOOK','MANAGEMENT_TAKE','IMPACT_ANALYSIS','CHART_WIZARD','BROADCAST_BRIEFING','ANALYST_MEET','ACQUISITION','ORDER_RECEIVED','CREDIT_RATING','ANALYST_VIEW','TWEET','GENERIC'];
 
     chips.innerHTML = order.map(t => `<button class="type-chip${t===state.activeType?' type-chip--active':''}" data-type="${t}">${t}</button>`).join('');
     $$('.type-chip', chips).forEach(c => {
