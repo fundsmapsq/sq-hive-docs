@@ -65,7 +65,7 @@ window.SQ_SAMPLES = (function () {
         description: "📅 Board Meeting Scheduled for Financial Results & Dividend",
         content: "📍Key Insight: Board meeting on May 22, 2026; Approved Audited Standalone & Consolidated results for FY ending March 31, 2026; Final dividend recommendation to be discussed; Trading window closed from March 27, 2026 until 48 hours post results announcement",
         scripDetails: { bseScripCode: "522105", scripName: "Birla Precision Technologies Ltd", bseTickr: "BIRLAPREC", nseTickr: null, isin: "INE372E01025" },
-        linkDetail: { shortLink: "https://sqst.in/mMHzW" },
+        linkDetail: { shortLink: "https://sqst.in/mMHzW", linkSource: "ScoutQuest.in" },
         creationTime: 1779207995,
         filterCategory: "EVENT_SCHEDULE",
         proFunnel: {
@@ -86,7 +86,7 @@ window.SQ_SAMPLES = (function () {
         description: "💎 Block Deal · PolicyBazaar · ₹805 cr changed hands",
         content: "Tencent Cloud Europe sold 48.4L shares of PolicyBazaar on NSE at WATP ₹1,664. Buyers include Societe Generale and Morgan Stanley Asia Singapore.",
         scripDetails: { bseScripCode: "543390", scripName: "PB Fintech Limited", bseTickr: "POLICYBZR", nseTickr: "POLICYBZR", isin: "INE417T01026" },
-        linkDetail: { shortLink: "https://sqst.in/aB12X" },
+        linkDetail: { shortLink: "https://sqst.in/aB12X", linkSource: "ScoutQuest.in" },
         creationTime: 1779200000,
         filterCategory: "KEY_UPDATE",
         proFunnel: {
@@ -126,7 +126,7 @@ window.SQ_SAMPLES = (function () {
         description: "📊 Q4 FY24 Earnings · Pre-sales up 40% YoY",
         content: "Record pre-sales: Q4 FY24 at INR 42.3 billion (40% YoY growth). FY24 EBITDA margin ~30%. Operating cash flow ₹57.2 bn for FY24.",
         scripDetails: { bseScripCode: "543287", scripName: "Macrotech Developers Limited", bseTickr: "LODHA", nseTickr: "LODHA", isin: "INE670K01029" },
-        linkDetail: { shortLink: "https://sqst.in/F08qo" },
+        linkDetail: { shortLink: "https://sqst.in/F08qo", linkSource: "ScoutQuest.in" },
         creationTime: 1779100000,
         filterCategory: "ANALYTICAL_UPDATE",
         proFunnel: {
@@ -147,7 +147,7 @@ window.SQ_SAMPLES = (function () {
         description: "📦 Business Order Received · ₹20.27 cr",
         content: "Order from a leading Miniratna Company for logistics and material handling services in the infrastructure and mining sector. Execution period ~6 months.",
         scripDetails: { bseScripCode: "532884", scripName: "Refex Industries Ltd", bseTickr: "REFEX", nseTickr: "REFEX", isin: "INE043D01016" },
-        linkDetail: { shortLink: "https://sqst.in/Or6xY" },
+        linkDetail: { shortLink: "https://sqst.in/Or6xY", linkSource: "ScoutQuest.in" },
         creationTime: 1779000000,
         filterCategory: "KEY_UPDATE",
         proFunnel: {
@@ -409,7 +409,7 @@ window.SQ_SAMPLES = (function () {
         description: "📊 Macrotech Developers Limited Earnings Conference Call Q4FY24",
         content: "- Record pre-sales: Q4 FY24 at INR 42.3 billion (40% YoY growth) and FY24 at INR 145.2 billion (20% YoY growth). - Strong EBITDA margin: ~30% for FY24 and ~31% for Q4 FY24. - Robust operating cash flow: INR 57.2 billion for FY24 and INR 20.5 billion in Q4 FY24.",
         scripDetails: { bseScripCode: "543287", scripName: "Macrotech Developers Limited", bseTickr: "LODHA", nseTickr: "LODHA", isin: "INE670K01029" },
-        linkDetail: { shortLink: "https://sqst.in/F08qo" },
+        linkDetail: { shortLink: "https://sqst.in/F08qo", linkSource: "ScoutQuest.in" },
         creationTime: 1717247895,
         filterCategory: "ANALYTICAL_UPDATE",
         proFunnel: {
@@ -441,7 +441,7 @@ window.SQ_SAMPLES = (function () {
         description: "📊 Macrotech Developers Limited Earnings Conference Call Q4FY24 (Revised)",
         content: "- Record pre-sales: Q4 FY24 at INR 42.3 billion (40% YoY growth) and FY24 at INR 145.2 billion (20% YoY growth). - Strong EBITDA margin: ~30% for FY24 and ~31% for Q4 FY24.",
         scripDetails: { bseScripCode: "543287", scripName: "Macrotech Developers Limited", bseTickr: "LODHA", nseTickr: "LODHA", isin: "INE670K01029" },
-        linkDetail: { shortLink: "https://sqst.in/F08qo" },
+        linkDetail: { shortLink: "https://sqst.in/F08qo", linkSource: "ScoutQuest.in" },
         creationTime: 1717247895,
         filterCategory: "ANALYTICAL_UPDATE",
         proFunnel: {
