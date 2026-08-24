@@ -402,7 +402,7 @@ window.SQ_SAMPLES = (function () {
     created: {
       creationTimestamp: 1717247896,
       eventId: "evt_cdab7cfe-043c-4d4a-99c1-258c0a60f4b8",
-      eventType: "V1_INSTRUMENT_UPDATE_CREATED",
+      eventType: "v1.instrument_update.created",
       payload: {
         id: "584732514325722439",
         title: "Macrotech Developers Limited",
@@ -434,7 +434,7 @@ window.SQ_SAMPLES = (function () {
     modified: {
       creationTimestamp: 1717247896,
       eventId: "evt_cdab7cfe-043c-4d4a-99c1-258c0a60f4b8",
-      eventType: "V1_INSTRUMENT_UPDATE_MODIFIED",
+      eventType: "v1.instrument_update.modified",
       payload: {
         id: "584732514325722439",
         title: "Macrotech Developers Limited",
@@ -459,6 +459,17 @@ window.SQ_SAMPLES = (function () {
           concernFlag: { flag: "💡 Insightful Update", flagNote: "Strong operating performance with margin expansion" },
           deepdiveData: { type: "IMPACT_ANALYSIS", fast_fact: "Macrotech reported record FY24 pre-sales of INR 145.2 billion (20% YoY) with EBITDA margin of ~30%." }
         }
+      }
+    },
+    assessment_ready: {
+      creationTimestamp: 1717248130,
+      eventId: "evt_9f1c4a7e-88d2-4c31-b0aa-2f5be1d7c904",
+      eventType: "v1.assessment.ready",
+      payload: {
+        instrumentUpdateId: "584732514325722439",
+        scripDetails: { bseScripCode: "538835", scripName: "Intellect Design Arena Ltd", bseTickr: "INTELLECT", nseTickr: "INTELLECT", isin: "INE306R01017" },
+        creationTime: 1717247895,
+        assessment: assessmentSample
       }
     },
     user_created: {

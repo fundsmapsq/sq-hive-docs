@@ -1019,9 +1019,12 @@
     function render(eventKey) {
       const payload = window.SQ_SAMPLES.webhookSamples[eventKey];
       codeEl.innerHTML = syntaxHighlightJson(payload);
+      // These are the values that actually appear in the payload's eventType and in the Svix
+      // event catalog, so they must match the backend's HiveApiWebhookEnum.EventType exactly.
       const label = ({
-        created: 'V1_INSTRUMENT_UPDATE_CREATED',
-        modified: 'V1_INSTRUMENT_UPDATE_MODIFIED',
+        created: 'v1.instrument_update.created',
+        modified: 'v1.instrument_update.modified',
+        assessment_ready: 'v1.assessment.ready',
         user_created: 'v1.user.created',
         user_modified: 'v1.user.modified'
       })[eventKey];
