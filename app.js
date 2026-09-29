@@ -588,6 +588,8 @@
     ANALYST_MEET: renderAnalystMeet,
     ACQUISITION: renderAcquisition,
     ORDER_RECEIVED: renderOrderReceived,
+    HEARD_ON_AIR: renderHeardOnAir,
+    SHAREHOLDER_PRESENTATION: renderShareholderPresentation,
     GENERIC: renderGeneric
   };
 
@@ -768,6 +770,25 @@
       </div>
       <div class="dd-card dd-card--full"><div class="dd-card__label">Details</div><div style="font-size:13.5px;line-height:1.6;color:var(--text-2);">${escapeHtml(d.short_description_of_order_details||'')}</div></div>`;
   }
+  function renderHeardOnAir(d) {
+    const who = d.attribution && d.attribution.analyst
+      ? '🎙️ ' + d.attribution.analyst + (d.attribution.firm ? ', ' + d.attribution.firm : '') + ' on ' + d.channel
+      : '📺 Reported on ' + d.channel;
+    const call = d.recommendation
+      ? `<div class="dd-card dd-card--full" style="margin-top:14px;"><div class="dd-card__label">Call</div><div style="font-family:var(--display);font-size:18px;font-weight:600;text-transform:capitalize;">${escapeHtml(d.recommendation)}</div><div style="font-size:13.5px;color:var(--text-2);">${escapeHtml(d.rationale)}</div></div>`
+      : '';
+    return `<div class="dd-card dd-card--full"><div class="dd-card__label">${escapeHtml(who)}</div>
+      <h4 style="font-family:var(--display);font-size:16px;margin:0 0 10px;line-height:1.35;">${escapeHtml(d.headline)}</h4>
+      <div style="font-size:13.5px;line-height:1.6;color:var(--text-2);">${escapeHtml(d.summary)}</div></div>${call}`;
+  }
+  function renderShareholderPresentation(d) {
+    const heads = (d.headlines || '').split('\n').filter(Boolean)
+      .map(h => `<h4 style="font-family:var(--display);font-size:15px;margin:0 0 8px;line-height:1.35;">${escapeHtml(h)}</h4>`).join('');
+    const hl = (d.highlights || []).map(h => `<div class="dd-card"><div class="dd-card__label">${escapeHtml(h.label)}</div><div style="font-family:var(--display);font-size:16px;font-weight:600;">${escapeHtml(h.value)}</div></div>`).join('');
+    const ob = d.order_book ? `<div style="margin-top:12px;font-size:13px;color:var(--text-2);">Order book: ${escapeHtml(d.order_book.value_as_written)}${d.order_book.as_of ? ' (as of ' + escapeHtml(d.order_book.as_of) + ')' : ''}</div>` : '';
+    return `<div class="dd-card dd-card--full"><div class="dd-card__label">👨‍🏫 Shareholder Presentation · ${escapeHtml(d.period)}</div>${heads}</div>
+      <div class="dd-grid" style="margin-top:14px;">${hl}</div>${ob}`;
+  }
   function renderGeneric(d) {
     return `<div class="dd-card dd-card--full">
       <div class="dd-card__label">🧩 Generic update</div>
@@ -784,7 +805,7 @@
     const chips = $('#typeChips');
     const stage = $('#typeStage');
     const samples = window.SQ_SAMPLES.deepdiveSamples;
-    const order = ['BLOCK_DEAL','BULK_DEAL','SAST_NOTEWORTHY_TRANSACTION','RESULTS_QUICK_LOOK','MANAGEMENT_TAKE','IMPACT_ANALYSIS','CHART_WIZARD','BROADCAST_BRIEFING','ANALYST_MEET','ACQUISITION','ORDER_RECEIVED','CREDIT_RATING','ANALYST_VIEW','TWEET','GENERIC'];
+    const order = ['BLOCK_DEAL','BULK_DEAL','SAST_NOTEWORTHY_TRANSACTION','RESULTS_QUICK_LOOK','MANAGEMENT_TAKE','IMPACT_ANALYSIS','CHART_WIZARD','BROADCAST_BRIEFING','ANALYST_MEET','ACQUISITION','ORDER_RECEIVED','HEARD_ON_AIR','SHAREHOLDER_PRESENTATION','CREDIT_RATING','ANALYST_VIEW','TWEET','GENERIC'];
 
     chips.innerHTML = order.map(t => `<button class="type-chip${t===state.activeType?' type-chip--active':''}" data-type="${t}">${t}</button>`).join('');
     $$('.type-chip', chips).forEach(c => {

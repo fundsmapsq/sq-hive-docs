@@ -366,6 +366,96 @@ window.SQ_SAMPLES = (function () {
         short_description_of_order_details: "Refex Industries Ltd received an order from a leading Miniratna Company for logistics and material handling services in the infrastructure and mining sector to be executed over ~6 months."
       }
     },
+    HEARD_ON_AIR: {
+      label: "HeardOnAir",
+      desc: "Insights heard on live TV business news — headline, attribution, points and any analyst call.",
+      stock: "Vesuvius India Limited",
+      data: {
+        "type": "HEARD_ON_AIR",
+        "headline": "Vesuvius stock came back into focus with a volume pickup, but analyst recommended avoiding the stock due to a continuing downtrend.",
+        "summary": "- Vesuvius appeared on the charts after a long time with some pickup in volumes. - Somil Mehta said the stock is in a downtrend for a while and trading below its averages, recommending avoidance.",
+        "numbers": [],
+        "channel": "NDTV Profit",
+        "sector": "Capital Goods & Heavy Engineering",
+        "attribution": {
+          "analyst": "Somil Mehta",
+          "firm": "",
+          "role": ""
+        },
+        "recommendation": "avoid",
+        "rationale": "Stock in a downtrend for a while and trading below averages",
+        "image_url": "https://sqdatasourcer.fundsmap.com/i/01M3NZWFTHSA6KRECRAQ5MHD1G.png"
+      }
+    },
+    SHAREHOLDER_PRESENTATION: {
+      label: "Shareholder Presentation",
+      desc: "Curated takeaways from an investor presentation — headlines, highlights, strategy, direction, risks.",
+      stock: "Prime Focus Ltd",
+      data: {
+        "type": "SHAREHOLDER_PRESENTATION",
+        "headlines": "FY26 revenue up 30% to INR 4,676 Cr., EBITDA up 81% to INR 1,423 Cr.; net profit INR 301 Cr. vs loss of INR 458 Cr.\nBrahma AI to scale, enter sports, healthcare and advertising, and globalise using $150M raised at $2B valuation",
+        "period": "FY26 and Q1 FY27",
+        "positioning": "The company describes itself as a leading tech-enabled creative solutions provider to the entertainment industry, with c.94% of revenue from outside India, 24 locations and 10,200+ employees, c.75% in India.",
+        "highlights": [
+          {
+            "value": "INR 4,676 Cr.",
+            "label": "Revenue, FY26"
+          },
+          {
+            "value": "c.30%",
+            "label": "EBITDA margin, FY26"
+          }
+        ],
+        "strategy": [
+          {
+            "statement": "Selective content investments via minority stakes, with services contracts typically 2-3x the investment quantum as a natural hedge",
+            "page": 33
+          },
+          {
+            "statement": "Scalable India-led delivery model to drive cost efficiency",
+            "page": 20
+          }
+        ],
+        "direction": [
+          {
+            "statement": "Brahma AI capital to expand talent pool, technology and infrastructure",
+            "horizon": "",
+            "page": 30
+          },
+          {
+            "statement": "Brahma AI to enter new use-cases such as sports, healthcare and advertising",
+            "horizon": "",
+            "page": 30
+          }
+        ],
+        "expansion": [
+          {
+            "statement": "FY26 and Q1 FY27 investments focused on expanding into Australia and other European locations and upgrading India facilities",
+            "page": 41
+          },
+          {
+            "statement": "Partnership with SETT to invest in Anima Kitchent to produce multiple animation movies",
+            "page": 8
+          }
+        ],
+        "risks": [
+          {
+            "statement": "Brahma AI transaction is subject to shareholder approval and other conditions; PFL expected to cease control, with Brahma entities becoming associates",
+            "page": 9
+          },
+          {
+            "statement": "Gross debt increased due to FX impact on foreign currency loans, a new facility and higher working capital needs",
+            "page": 44
+          }
+        ],
+        "order_book": {
+          "value_as_written": "$600M+",
+          "normalised_value": null,
+          "as_of": "June 30, 2026"
+        },
+        "image_url": "https://sqhivebackend.fundsmap.com/cards/deck-a69dbf2e764700991481f3a6f6df6026.png"
+      }
+    },
     GENERIC: {
       label: "Generic",
       desc: "Fallback bucket — for update sources without a dedicated schema. Treat the rest of deepdiveData as opaque JSON.",
