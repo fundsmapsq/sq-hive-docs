@@ -68,6 +68,7 @@ window.SQ_SAMPLES = (function () {
         linkDetail: { shortLink: "https://sqst.in/mMHzW", linkSource: "ScoutQuest.in" },
         creationTime: 1779207995,
         filterCategory: "EVENT_SCHEDULE",
+        semanticDuplicate: false,
         proFunnel: {
           sentiment: "neutral",
           bytes: [
@@ -89,6 +90,7 @@ window.SQ_SAMPLES = (function () {
         linkDetail: { shortLink: "https://sqst.in/aB12X", linkSource: "ScoutQuest.in" },
         creationTime: 1779200000,
         filterCategory: "KEY_UPDATE",
+        semanticDuplicate: false,
         proFunnel: {
           sentiment: "negative",
           bytes: [
@@ -129,6 +131,7 @@ window.SQ_SAMPLES = (function () {
         linkDetail: { shortLink: "https://sqst.in/F08qo", linkSource: "ScoutQuest.in" },
         creationTime: 1779100000,
         filterCategory: "ANALYTICAL_UPDATE",
+        semanticDuplicate: false,
         proFunnel: {
           sentiment: "positive",
           bytes: [
@@ -150,6 +153,7 @@ window.SQ_SAMPLES = (function () {
         linkDetail: { shortLink: "https://sqst.in/Or6xY", linkSource: "ScoutQuest.in" },
         creationTime: 1779000000,
         filterCategory: "KEY_UPDATE",
+        semanticDuplicate: false,
         proFunnel: {
           sentiment: "positive",
           bytes: [
@@ -502,6 +506,7 @@ window.SQ_SAMPLES = (function () {
         linkDetail: { shortLink: "https://sqst.in/F08qo", linkSource: "ScoutQuest.in" },
         creationTime: 1717247895,
         filterCategory: "ANALYTICAL_UPDATE",
+        semanticDuplicate: false,
         proFunnel: {
           sentiment: "positive",
           bytes: [
@@ -534,6 +539,7 @@ window.SQ_SAMPLES = (function () {
         linkDetail: { shortLink: "https://sqst.in/F08qo", linkSource: "ScoutQuest.in" },
         creationTime: 1717247895,
         filterCategory: "ANALYTICAL_UPDATE",
+        semanticDuplicate: false,
         proFunnel: {
           sentiment: "positive",
           bytes: [
