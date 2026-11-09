@@ -582,7 +582,7 @@
     SAST_NOTEWORTHY_TRANSACTION: renderSast,
     CHART_WIZARD: renderChartWizard,
     BROADCAST_BRIEFING: renderBroadcast,
-    ANALYST_VIEW: renderMediaOnly,
+    ANALYST_VIEW: renderAnalystView,
     TWEET: renderMediaOnly,
     CREDIT_RATING: renderCreditRating,
     ANALYST_MEET: renderAnalystMeet,
@@ -707,7 +707,7 @@
   }
   function renderChartWizard(d) {
     const view = (d.view || '').toLowerCase();
-    const cls = view === 'bullish' ? 'tag--pos' : view === 'bearish' ? 'tag--neg' : 'tag--neutral';
+    const cls = view === 'bullish' ? 'tag--pos' : view === 'bearish' ? 'tag--neg' : 'tag--neutral'; // consolidation → neutral
     const patterns = (d.chartIndicatorAndPatterns || '').split(',').map(s => s.trim()).filter(Boolean);
     return `
       <div class="deal-summary">
@@ -720,7 +720,29 @@
           ${patterns.map(p=>`<span class="tag tag--info" style="font-size:11.5px;">${escapeHtml(p)}</span>`).join('')}
         </div>
       </div>
-      <div class="dd-card dd-card--full"><div class="dd-card__label">Rationale</div><div style="font-size:13.5px;line-height:1.6;color:var(--text-2);">${escapeHtml(d.rationale||'')}</div></div>`;
+      <div class="dd-card dd-card--full"><div class="dd-card__label">Rationale</div><div style="font-size:13.5px;line-height:1.6;color:var(--text-2);">${escapeHtml(d.rationale||'')}</div></div>
+      ${d.recentPatterns ? `<div class="dd-card dd-card--full"><div class="dd-card__label">Recent patterns · recentPatterns</div><div style="font-size:13.5px;line-height:1.6;color:var(--text-2);">${escapeHtml(d.recentPatterns)}</div></div>` : ''}`;
+  }
+  function renderAnalystView(d) {
+    const amt = x => x ? (x.value != null ? '₹' + x.value.toLocaleString('en-IN') : (x.asWritten || '—')) : '—';
+    const box = (k, v) => `<div class="dd-card"><div class="dd-card__label">${k}</div><div style="font-family:var(--display);font-size:18px;font-weight:600;">${escapeHtml(String(v))}</div></div>`;
+    const list = (k, xs) => xs && xs.length ? `<div class="dd-card dd-card--full" style="margin-top:14px;"><div class="dd-card__label">${k}</div><ul style="margin:0;padding-left:18px;font-size:13.5px;line-height:1.6;color:var(--text-2);">${xs.map(x => `<li>${escapeHtml(x)}</li>`).join('')}</ul></div>` : '';
+    const rows = (xs, f) => (xs || []).map(x => x.metric + ' ' + x.period + ': ' + x[f]);
+    const va = d.valuation;
+    return `
+      <div class="dd-card__label">🔍 Broker report${d.reportType ? ' · ' + escapeHtml(d.reportType) : ''}${d.horizon ? ' · ' + escapeHtml(d.horizon) : ''}</div>
+      <div class="dd-grid">
+        ${box('Rating', (d.rating || '—') + (d.previousRating && d.previousRating !== d.rating ? ' (was ' + d.previousRating + ')' : ''))}
+        ${box('Target', amt(d.target) + (d.previousTarget ? ' (was ' + amt(d.previousTarget) + ')' : ''))}
+        ${box('CMP at report', amt(d.reportCmp))}
+        ${box('Upside at report', d.upsideAtReportPct != null ? d.upsideAtReportPct + '%' : '—')}
+      </div>
+      ${va ? `<div class="dd-card dd-card--full" style="margin-top:14px;"><div class="dd-card__label">Valuation</div><div>${escapeHtml([va.method, va.multiple, va.metric, va.period].filter(Boolean).join(' · '))}</div>${va.description ? `<div style="font-size:13.5px;line-height:1.6;color:var(--text-2);margin-top:6px;">${escapeHtml(va.description)}</div>` : ''}</div>` : ''}
+      ${list('Estimates', rows(d.estimates, 'value'))}
+      ${list('Estimate changes', rows(d.estimateChanges, 'change'))}
+      ${list('Catalysts', d.catalysts)}
+      ${list('Risks', d.risks)}
+      ${d.analysts && d.analysts.length ? `<div style="margin-top:12px;font-family:var(--mono);font-size:11.5px;color:var(--text-3);">Analysts: ${escapeHtml(d.analysts.join(', '))}</div>` : ''}`;
   }
   function renderBroadcast(d) {
     return `

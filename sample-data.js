@@ -282,15 +282,16 @@ window.SQ_SAMPLES = (function () {
     },
     CHART_WIZARD: {
       label: "Chart Wizard",
-      desc: "Technical analysis output — pattern detection, view, and rationale.",
-      stock: "Sample Equity Ltd",
+      desc: "AI-generated technical chart pattern analysis — view (bullish / bearish / consolidation), interval (15 min to monthly), patterns, rationale and, when present, the patterns spotted on the stock in the last 5 days (recentPatterns)",
+      stock: "Reliance Industries Ltd",
       data: {
-        type: "CHART_WIZARD",
-        view: "bullish",
-        imageUrl: "",
-        interval: "1W (weekly)",
-        rationale: "Weekly breakout above long-term horizontal resistance with a strong bullish candle and volume spike. Price trading above the rising trendline and the moving average while Bollinger Bands expand, indicating renewed bullish momentum and likely trend continuation.",
-        chartIndicatorAndPatterns: "ascending triangle breakout,weekly bullish candle,volume spike,price above moving average,rising trendline,Bollinger Bands expansion"
+        "type": "CHART_WIZARD",
+        "view": "consolidation",
+        "interval": "4 hours",
+        "chartIndicatorAndPatterns": "sharp rally, post-rally consolidation, volume spike",
+        "rationale": "The latest candles are moving sideways in a tight area near recent highs after a sharp, high-volume rally. No fresh breakout or reversal is visible in the most recent candles.",
+        "recentPatterns": "ChartWizard patterns spotted in the last 5 days: 1 bullish. 8 Nov (15 min, bullish): range breakout, rising volume",
+        "imageUrl": "https://renders.urlbox.com/ub-temp-renders/renders/sample.png"
       }
     },
     BROADCAST_BRIEFING: {
@@ -307,12 +308,65 @@ window.SQ_SAMPLES = (function () {
     },
     ANALYST_VIEW: {
       label: "Analyst View",
-      desc: "Image-first analyst report — for visual reference.",
-      stock: "Sample Equity Ltd",
+      desc: "Broker research reports — rating, target, report-date CMP and upside, valuation basis, estimates and estimate revisions, risks, catalysts and analysts",
+      stock: "Cera Sanitaryware Ltd",
       data: {
-        type: "ANALYST_VIEW",
-        image_url: "",
-        isImagePresent: true
+        "type": "ANALYST_VIEW",
+        "rating": "Buy",
+        "previousRating": "Buy",
+        "target": {
+          "value": 6650,
+          "asWritten": "₹ 6650"
+        },
+        "previousTarget": null,
+        "reportCmp": {
+          "value": 4780,
+          "asWritten": "₹ 4780"
+        },
+        "upsideAtReportPct": 39.1,
+        "horizon": "12 months",
+        "reportType": "result update",
+        "valuation": {
+          "method": "P/E",
+          "multiple": "30 x",
+          "metric": "EPS",
+          "period": "FY28",
+          "description": "The broker maintains BUY with a revised target price of ₹6650, valuing the stock at 30x FY28 P/E."
+        },
+        "estimates": [
+          {
+            "metric": "Revenue",
+            "period": "FY28E",
+            "value": "₹2713 crore"
+          }
+        ],
+        "estimateChanges": [
+          {
+            "metric": "EBITDA",
+            "period": "FY28E",
+            "change": "- 2.5%"
+          },
+          {
+            "metric": "EPS",
+            "period": "FY28E",
+            "change": "- 2.5%"
+          }
+        ],
+        "risks": [
+          "Slowdown in demand",
+          "Further spikes in input costs, specifically brass and gas"
+        ],
+        "catalysts": [
+          "Recovering retail channel demand",
+          "Cumulative benefits of pricing actions driving margin expansion",
+          "Progressive improvement in operating profitability through H2FY27"
+        ],
+        "analysts": [
+          "Bhupendra Tiwary, CFA",
+          "Bhupesh Kawdia"
+        ],
+        "image_url": "https://renders.urlbox.com/ub-temp-renders/renders/sample.png",
+        "isImagePresent": true
       }
     },
     TWEET: {
