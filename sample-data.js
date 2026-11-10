@@ -282,16 +282,16 @@ window.SQ_SAMPLES = (function () {
     },
     CHART_WIZARD: {
       label: "Chart Wizard",
-      desc: "AI-generated technical chart pattern analysis — view (bullish / bearish / consolidation), interval (15 min to monthly), patterns, rationale and, when present, the patterns spotted on the stock in the last 5 days (recentPatterns)",
-      stock: "Reliance Industries Ltd",
+      desc: "AI-generated technical chart pattern analysis — view (bullish / bearish / consolidation), interval (15 min to monthly), patterns and rationale; chartUrl is a JSON file with the candles, drawn lines and indicators to draw the chart yourself; recentPatterns (patterns spotted on the stock in the last 5 days) appears when there is a history",
+      stock: "Union Bank of India",
       data: {
         "type": "CHART_WIZARD",
-        "view": "consolidation",
-        "interval": "4 hours",
-        "chartIndicatorAndPatterns": "sharp rally, post-rally consolidation, volume spike",
-        "rationale": "The latest candles are moving sideways in a tight area near recent highs after a sharp, high-volume rally. No fresh breakout or reversal is visible in the most recent candles.",
-        "recentPatterns": "ChartWizard patterns spotted in the last 5 days: 1 bullish. 8 Nov (15 min, bullish): range breakout, rising volume",
-        "imageUrl": "https://renders.urlbox.com/ub-temp-renders/renders/sample.png"
+        "view": "bullish",
+        "interval": "Daily",
+        "chartIndicatorAndPatterns": "range breakout, rising MACD, custom indicator elevated with slight latest dip",
+        "rationale": "The latest candle pushes above the multi-month ceiling, with volume not notably elevated. MACD is rising and positive, supporting bullish momentum; the custom indicator has risen recently but dips at the end.",
+        "imageUrl": "https://sqothersources.fundsmap.com/chartwizard/i/9818b1f196654162c88ff9ad4238e21a.png",
+        "chartUrl": "https://sqothersources.fundsmap.com/chartwizard/v/426ad85f28a8a543f991f27af3c54725.json"
       }
     },
     BROADCAST_BRIEFING: {
@@ -308,64 +308,49 @@ window.SQ_SAMPLES = (function () {
     },
     ANALYST_VIEW: {
       label: "Analyst View",
-      desc: "Broker research reports — rating, target, report-date CMP and upside, valuation basis, estimates and estimate revisions, risks, catalysts and analysts",
-      stock: "Cera Sanitaryware Ltd",
+      desc: "Broker research reports — rating, target, report-date CMP and upside, valuation basis, estimates and estimate revisions, risks, catalysts, analysts, and who published it (researchBy, researchByType, SEBI RA registration no.)",
+      stock: "Hindalco Industries",
       data: {
         "type": "ANALYST_VIEW",
         "rating": "Buy",
-        "previousRating": "Buy",
+        "previousRating": "",
         "target": {
-          "value": 6650,
-          "asWritten": "₹ 6650"
+          "value": 1200,
+          "asWritten": "₹ 1200"
         },
         "previousTarget": null,
         "reportCmp": {
-          "value": 4780,
-          "asWritten": "₹ 4780"
+          "value": null,
+          "asWritten": "₹ 953 as on 9 November 2026"
         },
-        "upsideAtReportPct": 39.1,
+        "upsideAtReportPct": null,
         "horizon": "12 months",
         "reportType": "result update",
         "valuation": {
-          "method": "P/E",
-          "multiple": "30 x",
-          "metric": "EPS",
-          "period": "FY28",
-          "description": "The broker maintains BUY with a revised target price of ₹6650, valuing the stock at 30x FY28 P/E."
+          "method": "other",
+          "multiple": "",
+          "metric": "",
+          "period": "",
+          "description": "The broker retains its BUY rating with an unchanged fair value of Rs1,200 on a 12-month holding period, with no valuation multiple disclosed in the summarized text."
         },
-        "estimates": [
-          {
-            "metric": "Revenue",
-            "period": "FY28E",
-            "value": "₹2713 crore"
-          }
-        ],
-        "estimateChanges": [
-          {
-            "metric": "EBITDA",
-            "period": "FY28E",
-            "change": "- 2.5%"
-          },
-          {
-            "metric": "EPS",
-            "period": "FY28E",
-            "change": "- 2.5%"
-          }
-        ],
+        "estimates": [],
+        "estimateChanges": [],
         "risks": [
-          "Slowdown in demand",
-          "Further spikes in input costs, specifically brass and gas"
+          "Aluminum margins under pressure from elevated CoP",
+          "Lower premia and softer prices heading into Q3FY27",
+          "Gradual normalization after Oswego accidents"
         ],
         "catalysts": [
-          "Recovering retail channel demand",
-          "Cumulative benefits of pricing actions driving margin expansion",
-          "Progressive improvement in operating profitability through H2FY27"
+          "Copper margins expected to remain elevated through 2HFY27",
+          "India growth capex and backward integration projects on track",
+          "Operations normalizing gradually in 2HFY27E",
+          "Leverage likely to peak in FY27E"
         ],
-        "analysts": [
-          "Bhupendra Tiwary, CFA",
-          "Bhupesh Kawdia"
-        ],
-        "image_url": "https://renders.urlbox.com/ub-temp-renders/renders/sample.png",
+        "analysts": [],
+        "researchBy": "Kotak Securities",
+        "researchByType": "broker",
+        "sebiRaRegNo": "INH000000586",
+        "image_url": "https://sqothersources.fundsmap.com/analystviews/i/fa993a94c5d7707dc5e740fa014687c6.png",
         "isImagePresent": true
       }
     },

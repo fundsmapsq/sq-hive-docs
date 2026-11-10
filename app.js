@@ -721,7 +721,8 @@
         </div>
       </div>
       <div class="dd-card dd-card--full"><div class="dd-card__label">Rationale</div><div style="font-size:13.5px;line-height:1.6;color:var(--text-2);">${escapeHtml(d.rationale||'')}</div></div>
-      ${d.recentPatterns ? `<div class="dd-card dd-card--full"><div class="dd-card__label">Recent patterns · recentPatterns</div><div style="font-size:13.5px;line-height:1.6;color:var(--text-2);">${escapeHtml(d.recentPatterns)}</div></div>` : ''}`;
+      ${d.recentPatterns ? `<div class="dd-card dd-card--full"><div class="dd-card__label">Recent patterns · recentPatterns</div><div style="font-size:13.5px;line-height:1.6;color:var(--text-2);">${escapeHtml(d.recentPatterns)}</div></div>` : ''}
+      ${d.chartUrl ? `<div class="dd-card dd-card--full"><div class="dd-card__label">Chart data · chartUrl</div><a href="${escapeHtml(d.chartUrl)}" target="_blank" rel="noopener noreferrer">Candles, drawings, indicators (JSON) ↗</a></div>` : ''}`;
   }
   function renderAnalystView(d) {
     const amt = x => x ? (x.value != null ? '₹' + x.value.toLocaleString('en-IN') : (x.asWritten || '—')) : '—';
@@ -731,6 +732,7 @@
     const va = d.valuation;
     return `
       <div class="dd-card__label">🔍 Broker report${d.reportType ? ' · ' + escapeHtml(d.reportType) : ''}${d.horizon ? ' · ' + escapeHtml(d.horizon) : ''}</div>
+      ${d.researchBy ? `<div style="font-size:13.5px;margin-bottom:10px;">Research by ${escapeHtml(d.researchBy)}${d.researchByType ? ' (' + escapeHtml(d.researchByType) + ')' : ''}${d.sebiRaRegNo ? ' · SEBI RA ' + escapeHtml(d.sebiRaRegNo) : ''}</div>` : ''}
       <div class="dd-grid">
         ${box('Rating', (d.rating || '—') + (d.previousRating && d.previousRating !== d.rating ? ' (was ' + d.previousRating + ')' : ''))}
         ${box('Target', amt(d.target) + (d.previousTarget ? ' (was ' + amt(d.previousTarget) + ')' : ''))}
